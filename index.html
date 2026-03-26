@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Africa Free Routing - Donate</title>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -237,17 +237,12 @@
             currentAddress = username + '@blink.sv';
             
             qrcode.innerHTML = '';
-            await QRCode.toCanvas(document.createElement('canvas'), 'lightning:' + currentAddress, {
+            new QRCode(qrcode, {
+                text: 'lightning:' + currentAddress,
                 width: 200,
-                margin: 0,
-                color: {
-                    dark: '#000000',
-                    light: '#ffffff'
-                }
-            }, (err, canvas) => {
-                if (!err) {
-                    qrcode.appendChild(canvas);
-                }
+                height: 200,
+                colorDark: '#000000',
+                colorLight: '#ffffff'
             });
 
             invoiceText.textContent = currentAddress;
