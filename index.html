@@ -350,6 +350,28 @@
             loading.classList.add('show');
 
             try {
+                // First verify the username exists
+                const checkQuery = `
+                    query {
+                        usernameAvailable(username: "${username}")
+                    }
+                `;
+                
+                const checkResponse = await fetch('https://api.blink.sv/graphql', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query: checkQuery })
+                });
+                
+                const checkData = await checkResponse.json();
+                console.log('Username check:', checkData);
+                
+                if (!checkData.data?.usernameAvailable) {
+                    throw new Error('Username not found on Blink. Please check the username and try again.');
+                }
+
                 const query = `
                     mutation {
                         lnInvoiceCreateOnBehalfOfRecipient(input: {
