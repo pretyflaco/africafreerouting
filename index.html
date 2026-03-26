@@ -350,32 +350,35 @@
             loading.classList.add('show');
 
             try {
-                // First verify the username exists
-                const checkQuery = `
+                // First get the wallet ID for this username
+                const walletQuery = `
                     query {
-                        usernameAvailable(username: "${username}")
+                        accountDefaultWallet(username: "${username}", walletCurrency: BTC) {
+                            id
+                        }
                     }
                 `;
                 
-                const checkResponse = await fetch('https://api.blink.sv/graphql', {
+                const walletResponse = await fetch('https://api.blink.sv/graphql', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ query: checkQuery })
+                    body: JSON.stringify({ query: walletQuery })
                 });
                 
-                const checkData = await checkResponse.json();
-                console.log('Username check:', checkData);
+                const walletData = await walletResponse.json();
+                console.log('Wallet data:', walletData);
                 
-                if (!checkData.data?.usernameAvailable) {
-                    throw new Error('Username not found on Blink. Please check the username and try again.');
+                const walletId = walletData.data?.accountDefaultWallet?.id;
+                if (!walletId) {
+                    throw new Error('Could not find wallet for this username');
                 }
 
                 const query = `
                     mutation {
                         lnInvoiceCreateOnBehalfOfRecipient(input: {
-                            receiverUsername: "${username}",
+                            recipientWalletId: "${walletId}",
                             amount: 100,
                             memo: "Donation to Africa Free Routing"
                         }) {
