@@ -72,16 +72,17 @@ OpenCode and Chrome DevTools MCP need Node.js.
 # Install nvm (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 
-# Reload shell
-source ~/.bashrc
+# Load nvm into current shell (do NOT use 'source ~/.bashrc' — it may not work in all shells)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# Install Node.js LTS
-nvm install --lts
+# Install Node.js 20 (use a specific version, not --lts, to avoid lookup issues)
+nvm install 20
 ```
 
 Verify:
 ```bash
-node --version   # Should show v20.x or v22.x
+node --version   # Should show v20.x
 npm --version
 ```
 
@@ -92,13 +93,10 @@ OpenCode is the AI coding agent that runs in your terminal.
 ```bash
 # Install opencode
 curl -fsSL https://opencode.ai/install | bash
-```
 
-This installs the `opencode` binary to `~/.opencode/bin/`. Add it to your PATH:
-
-```bash
+# Add to PATH for current session and future sessions
+export PATH=$HOME/.opencode/bin:$PATH
 echo 'export PATH=$HOME/.opencode/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
 ```
 
 Verify:
@@ -218,7 +216,7 @@ If it responds and lists tools including bash, you're ready.
 |------|----------------|-------------|
 | `git` | `sudo apt install git` | Version control |
 | `gh` | `sudo apt install gh` | GitHub from terminal |
-| `node` | `nvm install --lts` | JavaScript runtime |
+| `node` | `nvm install 20` | JavaScript runtime |
 | `opencode` | `curl -fsSL https://opencode.ai/install \| bash` | AI coding agent |
 | `chrome-devtools-mcp` | `npm install -g chrome-devtools-mcp` | Browser automation for AI |
 
