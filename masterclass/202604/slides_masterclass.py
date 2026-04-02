@@ -150,7 +150,7 @@ def slide_01_title(c, blink_png):
     # Info
     _text_center(c, H - 400, "April 2, 2026  ·  18:00-20:00 UTC",
                  font="DejaVu", size=14, color=DIM)
-    _text_center(c, H - 430, "@kemal  ·  @Kim (Blink)  ·  @Openoms",
+    _text_center(c, H - 430, "@pretyflaco  ·  @k9ert (Blink)  ·  @openoms",
                  font="DejaVu", size=14, color=DIM)
     # Blink logo bottom-right
     _draw_logo_blink(c, blink_png, W - 140, 15, 120, 40)
@@ -639,7 +639,7 @@ def slide_13_resources(c, blink_png):
     _draw_logo_afr(c, 20, 10, 150, 50)
     _draw_logo_blink(c, blink_png, W - 140, 15, 120, 40)
     # Instructor handles
-    _text_center(c, 30, "@kemal  ·  @Kim  ·  @Openoms", font="Mono", size=11, color=DIM)
+    _text_center(c, 30, "@pretyflaco  ·  @k9ert  ·  @openoms", font="Mono", size=11, color=DIM)
     _slide_num(c, 13); c.showPage()
 
 
@@ -651,7 +651,7 @@ def generate():
 
     c = canvas.Canvas(OUTPUT, pagesize=landscape(A4))
     c.setTitle("Africa Free Routing — Lightning Payment Integration Masterclass")
-    c.setAuthor("@kemal, @Kim, @Openoms")
+    c.setAuthor("@pretyflaco, @k9ert, @openoms")
 
     slide_01_title(c, blink_png)
     slide_02_series(c, blink_png)
