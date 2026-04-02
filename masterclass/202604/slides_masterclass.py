@@ -244,7 +244,7 @@ def slide_01_title(c):
     _text_center(
         c,
         H - 405,
-        "Instructors:  @kemal (lead)  ·  @Kim Neunert  ·  @Openoms",
+        "Instructors:  @pretyflaco (lead)  ·  @k9ert  ·  @openoms",
         font="DejaVu",
         size=15,
         color=FG,
@@ -1252,7 +1252,7 @@ def slide_13_resources(c):
     _text_center(c, 55, "⚡", font="DejaVu", size=24, color=LIGHTNING)
 
     _text_center(
-        c, 25, "@kemal  ·  @Kim Neunert  ·  @Openoms", font="DejaVu", size=13, color=DIM
+        c, 25, "@pretyflaco  ·  @k9ert  ·  @openoms", font="DejaVu", size=13, color=DIM
     )
 
     _slide_num(c, 13)
@@ -1265,7 +1265,7 @@ def slide_13_resources(c):
 def generate(output_path):
     c = canvas.Canvas(output_path, pagesize=landscape(A4))
     c.setTitle("Lightning Payment Integration Masterclass — Day 2: Blink")
-    c.setAuthor("@kemal · @Kim Neunert · @Openoms")
+    c.setAuthor("@pretyflaco · @k9ert · @openoms")
 
     slide_01_title(c)
     slide_02_series(c)

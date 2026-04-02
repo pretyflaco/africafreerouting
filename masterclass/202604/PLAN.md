@@ -14,9 +14,9 @@
 
 | Role | Person | Focus |
 |------|--------|-------|
-| Lead presenter | @kemal | Live demo, prompting, tool setup |
-| Blink dev / API expert | @Kim (Kim Neunert) | API docs, dev.blink.sv, closing the loop |
-| Support / co-host | @Openoms | Technical backup, audience coordination |
+| Lead presenter | @pretyflaco | Live demo, prompting, tool setup |
+| Blink dev / API expert | @k9ert | API docs, dev.blink.sv, closing the loop |
+| Support / co-host | @openoms | Technical backup, audience coordination |
 
 ### Goal
 
@@ -226,4 +226,4 @@ These are gotchas and insights that came up during the brainstorming session and
 
 ---
 
-*This plan was compiled from the brainstorming session on March 26, 2026 (Kemal, Kim, Openoms) and the prototype building session that produced the donation page at https://pretyflaco.github.io/africafreerouting/*
+*This plan was compiled from the brainstorming session on March 26, 2026 (@pretyflaco, @k9ert, @openoms) and the prototype building session that produced the donation page at https://pretyflaco.github.io/africafreerouting/*
