@@ -12,14 +12,14 @@ This guide walks you through setting up a complete AI-assisted development envir
 
 ## Step 1: Terminal
 
-You need a Linux terminal. If you're on:
+You need a Unix terminal. If you're on:
 - **Linux:** You're good. Open your terminal.
-- **macOS:** Open Terminal.app. You're good.
+- **macOS:** Open Terminal.app (or iTerm2). You're good.
 - **Windows:** Install WSL first:
   ```bash
   wsl --install -d Ubuntu
   ```
-  Then open the Ubuntu terminal.
+  Then open the Ubuntu terminal. All following commands run inside WSL.
 
 ## Step 2: Git
 
@@ -30,7 +30,11 @@ git --version
 
 If not:
 ```bash
+# Linux/WSL
 sudo apt update && sudo apt install -y git
+
+# macOS (git comes pre-installed; if missing, this installs Xcode CLI tools)
+xcode-select --install
 ```
 
 Configure your identity:
@@ -45,13 +49,14 @@ git config --global init.defaultBranch main
 The GitHub CLI lets AI agents create repos, enable Pages, and push code — all from the terminal.
 
 ```bash
-# Install gh (Ubuntu/Debian)
+# Linux/WSL (Ubuntu/Debian)
 sudo apt install -y gh
 
-# Or install the latest version:
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-sudo apt update && sudo apt install -y gh
+# macOS (requires Homebrew)
+brew install gh
+
+# If you don't have Homebrew yet:
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 Authenticate:
@@ -217,8 +222,8 @@ If it responds and lists tools including bash, you're ready.
 
 | Tool | Install command | What it does |
 |------|----------------|-------------|
-| `git` | `sudo apt install git` | Version control |
-| `gh` | `sudo apt install gh` | GitHub from terminal |
+| `git` | `sudo apt install git` / `xcode-select --install` | Version control |
+| `gh` | `sudo apt install gh` / `brew install gh` | GitHub from terminal |
 | `node` | `nvm install v20.20.0` | JavaScript runtime |
 | `opencode` | `curl -fsSL https://opencode.ai/install \| bash` | AI coding agent |
 | `chrome-devtools-mcp` | `npm install -g chrome-devtools-mcp` | Browser automation for AI |
