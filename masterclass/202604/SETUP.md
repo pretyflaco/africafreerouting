@@ -37,6 +37,7 @@ Configure your identity:
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
+git config --global init.defaultBranch main
 ```
 
 ## Step 3: GitHub CLI (`gh`)
@@ -59,6 +60,8 @@ gh auth login
 ```
 Follow the prompts — choose GitHub.com, HTTPS, and authenticate via browser.
 
+> **Note:** If the browser doesn't open automatically (e.g., on a headless or minimal system), copy the URL and one-time code shown in the terminal and open it manually in any browser.
+
 Verify:
 ```bash
 gh auth status
@@ -76,8 +79,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# Install Node.js 20 (use a specific version, not --lts, to avoid lookup issues)
-nvm install 20
+# Install Node.js (pin full version — short aliases like "20" may fail on some systems)
+nvm install v20.20.0
 ```
 
 Verify:
@@ -216,7 +219,7 @@ If it responds and lists tools including bash, you're ready.
 |------|----------------|-------------|
 | `git` | `sudo apt install git` | Version control |
 | `gh` | `sudo apt install gh` | GitHub from terminal |
-| `node` | `nvm install 20` | JavaScript runtime |
+| `node` | `nvm install v20.20.0` | JavaScript runtime |
 | `opencode` | `curl -fsSL https://opencode.ai/install \| bash` | AI coding agent |
 | `chrome-devtools-mcp` | `npm install -g chrome-devtools-mcp` | Browser automation for AI |
 
