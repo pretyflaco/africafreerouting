@@ -19,5 +19,12 @@
         }
       }
     }
+  },
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["chrome-devtools-mcp"],
+      "enabled": true
+    }
   }
 }

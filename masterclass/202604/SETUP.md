@@ -124,9 +124,9 @@ Create the config file:
 mkdir -p ~/.config/opencode
 ```
 
-Copy the template config:
+Copy the example config from this repo:
 ```bash
-cp opencode-config-template.json ~/.config/opencode/opencode.json
+cp opencode-config-example.json ~/.config/opencode/opencode.json
 ```
 
 Or create it manually:
