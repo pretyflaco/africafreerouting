@@ -46,7 +46,7 @@ git config --global init.defaultBranch main
 
 ## Step 3: GitHub CLI (`gh`)
 
-The GitHub CLI lets AI agents create repos, enable Pages, and push code — all from the terminal.
+The GitHub CLI lets AI agents create repos, enable Pages, and push code — all from the terminal. You need a GitHub account (free, requires an email address) — sign up at https://github.com if you don't have one.
 
 ```bash
 # Linux/WSL (Ubuntu/Debian)
@@ -190,7 +190,7 @@ Add it to your OpenCode config by editing `~/.config/opencode/opencode.json` and
 
 ## Step 9: Blink Account
 
-1. Download Bitcoin Beach Wallet (Blink) on your phone
+1. Download **Blink Wallet** on your phone: https://get.blink.sv (redirects to App Store / Google Play)
 2. Create an account and choose a username
 3. Your Lightning address will be `username@blink.sv`
 
