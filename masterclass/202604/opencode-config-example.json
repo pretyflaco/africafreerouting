@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "ppq/minimax/minimax-m2.5",
+  "provider": {
+    "ppq": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "PPQ.AI",
+      "options": {
+        "baseURL": "https://api.ppq.ai",
+        "apiKey": "YOUR_PPQ_API_KEY_HERE"
+      },
+      "models": {
+        "minimax/minimax-m2.5": {
+          "name": "MiniMax M2.5",
+          "limit": {
+            "context": 196608,
+            "output": 16384
+          }
+        }
+      }
+    }
+  }
+}
